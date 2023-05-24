@@ -1,41 +1,35 @@
+<div class="calculator">
+    <div class="display">{{ input }}</div>
+    <div class="keypad">
+      <!-- Botones numéricos -->
+      <div class="row">
+        <div class="col-md-3"><button (click)="appendInput('7')">7</button></div>
+        <div class="col-md-3"><button (click)="appendInput('8')">8</button></div>
+        <div class="col-md-3"><button (click)="appendInput('9')">9</button></div>
+        <div class="col-md-3"><button (click)="appendInput('+')">+</button></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3"><button (click)="appendInput('4')">4</button></div>
+        <div class="col-md-3"><button (click)="appendInput('5')">5</button></div>
+        <div class="col-md-3"><button (click)="appendInput('6')">6</button></div>
+        <div class="col-md-3"><button (click)="appendInput('-')">-</button></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3"><button (click)="appendInput('1')">1</button></div>
+        <div class="col-md-3"><button (click)="appendInput('2')">2</button></div>
+        <div class="col-md-3"><button (click)="appendInput('3')">3</button></div>
+        <div class="col-md-3"><button (click)="appendInput('*')">x</button></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3"><button (click)="appendInput('.')">.</button></div>
+        <div class="col-md-3"><button (click)="appendInput('0')">0</button></div>
+        <div class="col-md-3"> <button (click)="calculate()">=</button></div>
+        <div class="col-md-3"><button (click)="appendInput('/')">÷</button></div>    
+      
+        <div class="col-md-6"><button (click)="clearInput()">AC</button></div>
+        <div class="col-md-6"><button (click)="deleteLastCharacter()"> ⌫</button></div>     
+      </div>
 
-    <div class="calculator">
-       
-        <div class="keypad">
-          <div class="row">
-            <button (click)="appendInput('7')">7</button>
-            <button (click)="appendInput('8')">8</button>
-            <button (click)="appendInput('9')">9</button>
-            <button (click)="appendInput('+')">+</button>
-          </div>
-          <div class="row">
-            <button (click)="appendInput('4')">4</button>
-            <button (click)="appendInput('5')">5</button>
-            <button (click)="appendInput('6')">6</button>
-            <button (click)="appendInput('-')">-</button>
-          </div>
-          <div class="row">
-            <button (click)="appendInput('1')">1</button>
-            <button (click)="appendInput('2')">2</button>
-            <button (click)="appendInput('3')">3</button>
-            <button (click)="appendInput('*')">*</button>
-          </div>
-          <div class="row">
-            <button (click)="appendInput('0')">0</button>
-            <button (click)="appendInput('.')">.</button>
-            <button (click)="clearInput()">Clear</button>
-            <button (click)="appendInput('/')">/</button>
-          </div>
-          <div class="row">
-            <button (click)="calculate()">=</button>
-            <button (click)="deleteLastCharacter()">Delete</button>
-          </div>
-        </div>
-        <div class="history">
-          <h3>Historial:</h3>
-          <ul>
-            <li *ngFor="let operation of history">{{ operation }}</li>
-          </ul>
-        </div>
-      </div> 
-
+    </div>
+  </div>
+  

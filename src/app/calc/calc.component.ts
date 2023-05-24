@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class CalcComponent {
   input: string = '';
-  history: string[] = [];
 
   appendInput(value: string) {
     this.input += value;
@@ -24,8 +23,6 @@ export class CalcComponent {
   calculate() {
     try {
       const result = eval(this.input);
-      const operation = `${this.input} = ${result}`;
-      this.history.push(operation);
       this.input = result.toString();
     } catch (error) {
       this.input = 'Error';
