@@ -1,0 +1,27 @@
+.calculator {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .keypad {
+    margin-top: 20px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 70px;
+    height: 50px;
+  }
+  
+  .clear,
+  .delete {
+    margin-top: 10px;
+  }
+  
