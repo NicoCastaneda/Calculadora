@@ -1,5 +1,7 @@
 <div class="calculator">
-    <div class="display">{{ input }}</div>
+  <input class="display" type="text" [value]="input" (input)="updateDisplayValue($event)" readonly>
+
+    <!--<div class="display">{{ input }}</div>   -->
     <div class="keypad">
       <!-- Botones numéricos -->
       <div class="row">
@@ -25,7 +27,9 @@
         <div class="col-md-3"><button (click)="appendInput('0')">0</button></div>
         <div class="col-md-3"> <button (click)="calculate()">=</button></div>
         <div class="col-md-3"><button (click)="appendInput('/')">÷</button></div>    
-      
+      </div>
+      <!-- Botones adicionales -->
+      <div class="row">
         <div class="col-md-6"><button (click)="clearInput()">AC</button></div>
         <div class="col-md-6"><button (click)="deleteLastCharacter()"> ⌫</button></div>     
       </div>

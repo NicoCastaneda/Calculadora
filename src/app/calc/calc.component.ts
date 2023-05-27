@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
 })
 export class CalcComponent {
   input: string = '';
+  //displayValue: string = '';
 
+  updateDisplayValue(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.input = target.value;
+  }
   appendInput(value: string) {
     this.input += value;
   }
