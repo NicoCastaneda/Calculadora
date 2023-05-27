@@ -7,14 +7,18 @@ import { Component } from '@angular/core';
 })
 export class CalcComponent {
   input: string = '';
-  //displayValue: string = '';
 
   updateDisplayValue(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.input = target.value;
   }
+
   appendInput(value: string) {
-    this.input += value;
+    if (value === 'Math.sqrt') {
+      this.input += '√';
+    } else {
+      this.input += value;
+    }
   }
 
   clearInput() {
@@ -25,12 +29,37 @@ export class CalcComponent {
     this.input = this.input.slice(0, -1);
   }
 
-  calculate() {
+  calculate(): void {
     try {
-      const result = eval(this.input);
+      let result: any;
+  
+      if (this.input.includes('^')) {
+        const operands = this.input.split('^');
+        result = Math.pow(parseFloat(operands[0]), parseFloat(operands[1]));
+      } else if (this.input.includes('√')) {
+        const operand = this.input.slice(1);
+        result = Math.sqrt(parseFloat(operand));
+      } else if (this.input.includes('sin')) {
+        const operand = this.input.slice(3);
+        result = Math.sin(parseFloat(operand));
+      } else if (this.input.includes('cos')) {
+        const operand = this.input.slice(3);
+        result = Math.cos(parseFloat(operand));
+      } else if (this.input.includes('tan')) {
+        const operand = this.input.slice(3);
+        result = Math.tan(parseFloat(operand));
+      } else if (this.input.includes('π')) {
+        result = Math.PI;
+      } else {
+        result = eval(this.input);
+      }
+  
       this.input = result.toString();
     } catch (error) {
       this.input = 'Error';
     }
   }
+  
+  
+
 }

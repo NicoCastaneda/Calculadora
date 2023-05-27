@@ -1,37 +1,47 @@
 <div class="calculator">
   <input class="display" type="text" [value]="input" (input)="updateDisplayValue($event)" readonly>
-
-    <!--<div class="display">{{ input }}</div>   -->
     <div class="keypad">
       <!-- Botones numéricos -->
       <div class="row">
-        <div class="col-md-3"><button (click)="appendInput('7')">7</button></div>
-        <div class="col-md-3"><button (click)="appendInput('8')">8</button></div>
-        <div class="col-md-3"><button (click)="appendInput('9')">9</button></div>
-        <div class="col-md-3"><button (click)="appendInput('+')">+</button></div>
+        <div ><button (click)="clearInput()">AC</button></div>
+        <div><button (click)="deleteLastCharacter()"> ⌫</button></div>   
+
       </div>
       <div class="row">
-        <div class="col-md-3"><button (click)="appendInput('4')">4</button></div>
-        <div class="col-md-3"><button (click)="appendInput('5')">5</button></div>
-        <div class="col-md-3"><button (click)="appendInput('6')">6</button></div>
-        <div class="col-md-3"><button (click)="appendInput('-')">-</button></div>
+        <div><button (click)="appendInput('7')">7</button></div>
+        <div><button (click)="appendInput('8')">8</button></div>
+        <div><button (click)="appendInput('9')">9</button></div>
+        <div><button class="op" (click)="appendInput('+')">+</button></div>
       </div>
       <div class="row">
-        <div class="col-md-3"><button (click)="appendInput('1')">1</button></div>
-        <div class="col-md-3"><button (click)="appendInput('2')">2</button></div>
-        <div class="col-md-3"><button (click)="appendInput('3')">3</button></div>
-        <div class="col-md-3"><button (click)="appendInput('*')">x</button></div>
+        <div><button (click)="appendInput('4')">4</button></div>
+        <div><button (click)="appendInput('5')">5</button></div>
+        <div><button (click)="appendInput('6')">6</button></div>
+        <div><button class="op" (click)="appendInput('-')">-</button></div>
       </div>
       <div class="row">
-        <div class="col-md-3"><button (click)="appendInput('.')">.</button></div>
-        <div class="col-md-3"><button (click)="appendInput('0')">0</button></div>
-        <div class="col-md-3"> <button (click)="calculate()">=</button></div>
-        <div class="col-md-3"><button (click)="appendInput('/')">÷</button></div>    
+        <div><button (click)="appendInput('1')">1</button></div>
+        <div><button (click)="appendInput('2')">2</button></div>
+        <div><button (click)="appendInput('3')">3</button></div>
+        <div><button class="op" (click)="appendInput('*')">x</button></div>
       </div>
-      <!-- Botones adicionales -->
       <div class="row">
-        <div class="col-md-6"><button (click)="clearInput()">AC</button></div>
-        <div class="col-md-6"><button (click)="deleteLastCharacter()"> ⌫</button></div>     
+        <div><button (click)="appendInput('.')">.</button></div>
+        <div><button (click)="appendInput('0')">0</button></div>
+        <div><button class="op" (click)="appendInput('^')">^</button></div>
+        <div><button class="op" (click)="appendInput('/')">÷</button></div>    
+      </div>
+      <div class="row">
+        <div><button class="op" (click)="appendInput('Math.sqrt')">√</button></div>
+        <div><button class="op" (click)="appendInput('(')">(</button></div>
+        <div><button class="op" (click)="appendInput(')')">)</button></div>
+        <div><button class="igual" (click)="calculate()">=</button></div>  
+      </div>
+      <div class="row">
+        <div><button class="trig" (click)="appendInput('cos')">cos</button></div>
+        <div><button class="trig" (click)="appendInput('sin')">sen</button></div>
+        <div><button class="trig" (click)="appendInput('tan')">tan</button></div>
+        <div><button class="trig" (click)="appendInput('π')">π</button></div>
       </div>
 
     </div>
