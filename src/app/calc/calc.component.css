@@ -1,11 +1,20 @@
+
 .calculator {
-    width: 300px;
+    width: 350px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
     background-color: rgb(157, 168, 209);
-    border-radius: 3%;
+    border-radius: 6%;
     border: 2px solid black;
+    @media screen and (min-width: 768px) {
+      margin-left: 10%;
+      margin-top: 10%;
+    }
+    @media screen and (max-width: 768px) {
+      margin-top: 2%;
+      margin-left: -2%
+    }
   }
   
   .keypad {
@@ -45,4 +54,27 @@
 
   .igual{
     background-color: aquamarine;
+  }
+
+  .trig{
+    background-color: rgb(255, 255, 185);
+  }
+
+  .Hcontainer{
+    background-color: rgb(255, 255, 255);
+    max-height: 550px;
+    overflow-y: auto;
+    margin-top: 10%;
+    @media screen and (max-width: 768px) {
+      margin-top: 10%;
+      max-height: 300px;
+    }
+  }
+
+  .config{
+    margin-top:10%;
+    background-color: chartreuse;
+    @media screen and (max-width: 768px) {
+      margin-top: 10%;
+    }
   }

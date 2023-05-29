@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class CalcComponent {
   input: string = '';
 
+  history: { operation: string; result: string }[] = [];
+
   updateDisplayValue(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.input = target.value;
@@ -49,14 +51,21 @@ export class CalcComponent {
         const operand = this.input.slice(3);
         result = Math.tan(parseFloat(operand));
       } else if (this.input.includes('π')) {
-        result = Math.PI;
+        const operand = this.input.replace('π', String(Math.PI));
+        result = eval(operand);
       } else {
         result = eval(this.input);
       }
   
       this.input = result.toString();
+
+      this.history.push({ operation: this.input, result: this.input });
+
     } catch (error) {
       this.input = 'Error';
     }
+  }
+  getHistory(): { operation: string; result: string }[] {
+    return this.history;
   }
 }
