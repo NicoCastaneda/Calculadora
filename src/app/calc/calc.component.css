@@ -8,7 +8,7 @@
     border-radius: 6%;
     border: 2px solid black;
     @media screen and (min-width: 768px) {
-      margin-left: 10%;
+      margin-left: 5%;
       margin-top: 10%;
     }
     @media screen and (max-width: 768px) {
@@ -78,7 +78,11 @@
 
   .config{
     margin-top:10%;
-    background-color: chartreuse;
+    border-radius: 5%;
+    border: 2px solid black;
+    height: 550px;
+    padding: 3%;
+    background-color: rgb(255, 255, 255);
     @media screen and (max-width: 768px) {
       margin-top: 10%;
     }
