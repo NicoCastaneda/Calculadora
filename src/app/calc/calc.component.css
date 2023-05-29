@@ -63,11 +63,16 @@
   .Hcontainer{
     background-color: rgb(255, 255, 255);
     max-height: 550px;
+    min-height: 550px;
     overflow-y: auto;
     margin-top: 10%;
+    padding: 3%;
+    border-radius: 5%;
+    border: 2px solid black;
     @media screen and (max-width: 768px) {
       margin-top: 10%;
       max-height: 300px;
+      min-height: 300px; 
     }
   }
 
@@ -77,4 +82,28 @@
     @media screen and (max-width: 768px) {
       margin-top: 10%;
     }
+  }
+
+  .delete-history{
+    font-size: x-small;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .clear-history{
+    font-size: small;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(253, 100, 100);
+    color: white;
+  }
+
+  .operations-container {
+    width: 75%;
+    float: left;
+  }
+
+  .button-container {
+    width: 25%;
+    float: right;
   }

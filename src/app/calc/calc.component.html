@@ -53,14 +53,20 @@
   </div>
 
 
-<div class="col-xl-4">
-  <div id="history-container" class="Hcontainer">      
+  <div class="col-xl-4">
+    <div id="history-container" class="Hcontainer">      
       <h3>Historial</h3>
-        <ul id="history-list">
-        <li *ngFor="let item of getHistory()">
-        {{ item.operation }} = {{ item.result }}
+      <div class="operations-container">
+      <ul id="history-list">
+        <li *ngFor="let item of getHistory(); let i = index">
+          {{ item.operation }} = {{ item.result }}
+          <div class="button-container">
+          <button class="delete-history" (click)="deleteHistoryEntry(item)">x</button>
+          </div>
         </li>
-        </ul>
+      </ul>
+    </div>
+      <button class="clear-history" (click)="clearHistory()">Clear</button>
     </div>
   </div>  
 
