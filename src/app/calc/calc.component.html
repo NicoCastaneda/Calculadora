@@ -3,10 +3,10 @@
   <div class="row">
 
     <div class="col-xl-4">
-    <div class="calculator">
-    <input class="display" type="text" [value]="input" (input)="updateDisplayValue($event)" readonly>
+    <div id="fondoCalc" class="calculator">
+    <input id="display" class="display" type="text" [value]="input" (input)="updateDisplayValue($event)" readonly>
       <div class="keypad">
-        <!-- Botones numéricos -->
+
         <div class="row">
           <div class="col-3"><button (click)="clearInput()">AC</button></div>
           <div class="col-3"><button (click)="deleteLastCharacter()"> ⌫</button></div>   
@@ -73,9 +73,21 @@
   <div class="col-xl-4">
   <div id="---" class="config">   
       <h3>Configuración</h3>
-       
+
+      <button id="tema1Button" (click)="cambiarTema('tema1')">Tema 1</button>
+  <button id="tema2Button" (click)="cambiarTema('tema2')">Tema 2</button>
+  
+  <button id="boton1" class="tema1">Botón 1</button>
+  <button id="boton2" class="tema1">Botón 2</button>
+  <button id="boton3" class="tema2">Botón 3</button>
+  <button id="boton4" class="tema2">Botón 4</button>
+
     </div>
   </div>
     
   </div>
 </div>
+
+
+  
+  

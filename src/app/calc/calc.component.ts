@@ -6,6 +6,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./calc.component.css']
 })
 export class CalcComponent {
+  cambiarTema(tema: string) {
+    const boton1 = document.getElementById('boton1') as HTMLButtonElement;
+    const boton2 = document.getElementById('boton2') as HTMLButtonElement;
+    const boton3 = document.getElementById('boton3') as HTMLButtonElement;
+    const boton4 = document.getElementById('boton4') as HTMLButtonElement;
+    const fondoCalc = document.getElementById('fondoCalc') as any;
+    const display = document.getElementById('display') as any;
+    
+    // Cambiar colores de botones según el tema seleccionado
+    if (tema === 'tema1') {
+      fondoCalc.style.backgroundColor = 'rgb(47, 46, 49)';
+      display.style.backgroundColor = 'rgb(178, 173, 187)';
+    } else if (tema === 'tema2') {
+      boton1.style.backgroundColor = 'blue';
+      boton2.style.backgroundColor = 'blue';
+      boton3.style.backgroundColor = 'red';
+      boton4.style.backgroundColor = 'red';
+    }
+    
+    // Puedes agregar más condiciones para otros temas
+    
+    // También puedes cambiar otros estilos de los botones si es necesario
+  }
+
+
+  id: number=0;
   input: string = '';
   operation: string = '';
   result: string = '';
@@ -87,3 +113,5 @@ export class CalcComponent {
     this.history = [];
   }
 }
+
+
