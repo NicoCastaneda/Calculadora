@@ -8,45 +8,45 @@
       <div class="keypad">
 
         <div class="row">
-          <div class="col-3"><button (click)="clearInput()">AC</button></div>
-          <div class="col-3"><button (click)="deleteLastCharacter()"> ⌫</button></div>   
+          <div class="col-3"><button id="btnAC" (click)="clearInput()">AC</button></div>
+          <div class="col-3"><button id="btnDel" (click)="deleteLastCharacter()"> ⌫</button></div>   
 
         </div>
         <div class="row">
-          <div class="col-3"><button (click)="appendInput('7')">7</button></div>
-          <div class="col-3"><button (click)="appendInput('8')">8</button></div>
-          <div class="col-3"><button (click)="appendInput('9')">9</button></div>
-          <div class="col-3"><button class="op" (click)="appendInput('+')">+</button></div>
+          <div class="col-3"><button id="btn7" (click)="appendInput('7')">7</button></div>
+          <div class="col-3"><button id="btn8" (click)="appendInput('8')">8</button></div>
+          <div class="col-3"><button id="btn9" (click)="appendInput('9')">9</button></div>
+          <div class="col-3"><button id="btnMAS" class="op" (click)="appendInput('+')">+</button></div>
         </div>
         <div class="row">
-          <div class="col-3"><button (click)="appendInput('4')">4</button></div>
-          <div class="col-3"><button (click)="appendInput('5')">5</button></div>
-          <div class="col-3"><button (click)="appendInput('6')">6</button></div>
-          <div class="col-3"><button class="op" (click)="appendInput('-')">-</button></div>
+          <div class="col-3"><button id="btn4" (click)="appendInput('4')">4</button></div>
+          <div class="col-3"><button id="btn5" (click)="appendInput('5')">5</button></div>
+          <div class="col-3"><button id="btn6" (click)="appendInput('6')">6</button></div>
+          <div class="col-3"><button id="btnMENOS" class="op" (click)="appendInput('-')">-</button></div>
         </div>
         <div class="row">
-          <div class="col-3"><button (click)="appendInput('1')">1</button></div>
-          <div class="col-3"><button (click)="appendInput('2')">2</button></div>
-          <div class="col-3"><button (click)="appendInput('3')">3</button></div>
-          <div class="col-3"><button class="op" (click)="appendInput('*')">x</button></div>
+          <div class="col-3"><button id="btn1"(click)="appendInput('1')">1</button></div>
+          <div class="col-3"><button id="btn2" (click)="appendInput('2')">2</button></div>
+          <div class="col-3"><button id="btn3" (click)="appendInput('3')">3</button></div>
+          <div class="col-3"><button id="btnPOR" class="op" (click)="appendInput('*')">x</button></div>
         </div>
         <div class="row">
-          <div class="col-3"><button (click)="appendInput('.')">.</button></div>
-          <div class="col-3"><button (click)="appendInput('0')">0</button></div>
-          <div class="col-3"><button (click)="appendInput('π')">π</button></div>
-          <div class="col-3"><button class="op" (click)="appendInput('/')">÷</button></div>    
+          <div class="col-3"><button id="btnPunto" (click)="appendInput('.')">.</button></div>
+          <div class="col-3"><button id="btn0" (click)="appendInput('0')">0</button></div>
+          <div class="col-3"><button id="btnPI" (click)="appendInput('π')">π</button></div>
+          <div class="col-3"><button id="btnDIV" class="op" (click)="appendInput('/')">÷</button></div>    
         </div>
         <div class="row">
-          <div class="col-3"><button class="op" (click)="appendInput('Math.sqrt')">√</button></div>
-          <div class="col-3"><button class="op" (click)="appendInput('(')">(</button></div>
-          <div class="col-3"><button class="op" (click)="appendInput(')')">)</button></div>
-          <div class="col-3"><button class="op" (click)="appendInput('^')">^</button></div> 
+          <div class="col-3"><button id="btnRAIZ" class="op" (click)="appendInput('Math.sqrt')">√</button></div>
+          <div class="col-3"><button id="btnAP" class="op" (click)="appendInput('(')">(</button></div>
+          <div class="col-3"><button id="btnCP" class="op" (click)="appendInput(')')">)</button></div>
+          <div class="col-3"><button id="btnPOT" class="op" (click)="appendInput('^')">^</button></div> 
         </div>
         <div class="row">
-          <div class="col-3"><button class="trig" (click)="appendInput('cos')">cos</button></div>
-          <div class="col-3"><button class="trig" (click)="appendInput('sin')">sen</button></div>
-          <div class="col-3"><button class="trig" (click)="appendInput('tan')">tan</button></div>
-          <div class="col-3"><button class="igual" (click)="calculate()">=</button></div> 
+          <div class="col-3"><button id="btnCOS" class="trig" (click)="appendInput('cos')">cos</button></div>
+          <div class="col-3"><button id="btnSEN" class="trig" (click)="appendInput('sin')">sen</button></div>
+          <div class="col-3"><button id="btnTAN" class="trig" (click)="appendInput('tan')">tan</button></div>
+          <div class="col-3"><button id="btnIGUAL" class="igual" (click)="calculate()">=</button></div> 
         </div>
       </div>
     </div>
@@ -55,8 +55,10 @@
 
   <div class="col-xl-4">
     <div id="history-container" class="Hcontainer">      
-      <h3>Historial</h3>
-      <div class="operations-container">
+      <h3>Historial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="clear-history" (click)="clearHistory()">Clear</button><hr></h3>
+       
+      <div class="operations-container"> 
       <ul id="history-list">
         <li *ngFor="let item of getHistory(); let i = index">
           {{ item.operation }} = {{ item.result }}
@@ -66,22 +68,23 @@
         </li>
       </ul>
     </div>
-      <button class="clear-history" (click)="clearHistory()">Clear</button>
+      
     </div>
   </div>  
 
   <div class="col-xl-4">
-  <div id="---" class="config">   
-      <h3>Configuración</h3>
-
-      <button id="tema1Button" (click)="cambiarTema('tema1')">Tema 1</button>
-  <button id="tema2Button" (click)="cambiarTema('tema2')">Tema 2</button>
-  
-  <button id="boton1" class="tema1">Botón 1</button>
-  <button id="boton2" class="tema1">Botón 2</button>
-  <button id="boton3" class="tema2">Botón 3</button>
-  <button id="boton4" class="tema2">Botón 4</button>
-
+    <div id="---" class="config">   
+      <h3>Configuración de Temas</h3>
+    <div class="row">  
+      <div class="col-4"><button (click)="cambiarTema('default')" class="default">Default</button></div>   
+      <div class="col-4"><button (click)="cambiarTema('oscuro')" class="oscuro">Dark</button></div>
+      <div class="col-4"><button (click)="cambiarTema('hacker')" class="hacker">Hacker</button></div>
+    </div>
+    <div class="row">
+      <div class="col-4"><button (click)="cambiarTema('rosa')" class="rosa">Pink</button></div>
+      <div class="col-4"><button (click)="cambiarTema('golden')" class="golden">Golden</button></div>
+      <div class="col-4"><button (click)="cambiarTema('fuego')" class="fuego">Fire</button></div>
+    </div>
     </div>
   </div>
     
